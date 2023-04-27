@@ -1,0 +1,74 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-col);
+    color: var(--white-col);
+    font-family: 'Montserrat', sans-serif;}
+
+:root{
+    --primary-col:#020822;
+    --white-col:#ffff;
+    --liteGray-col:#DAD9D7;
+}
+
+
+/* header section */
+header{
+    height: 100vh;
+}
+
+.logo{
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+}
+header .portfolio-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    height: 20vh;
+
+}
+.hamburger-btn{
+    width: 70px;
+}
+
+
+
+/* hero section */
+.hero-section{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-head-1{
+    display: flex;
+    align-items: center;
+}
+.hero-head-1 h3{
+    font-size: 70px;
+    font-weight: 800;
+}
+.hi-img{
+    width: 130px;
+}
+
+/* service section */
+.service-section{
+    margin-top: -200px;
+    height: 600px;
+}
+
+.liiteGray{
+    background-color: #ffa;
+}
+
+.panel{
+    min-height: 80vh;
+}
