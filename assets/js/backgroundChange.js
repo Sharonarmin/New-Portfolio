@@ -1,12 +1,11 @@
-$(window).scroll(function() {
-  
+$(window).scroll(function() {  
     // selectors
     var $window = $(window),
         $body = $('body'),
         $panel = $('.panel');
     
     // Change 33% earlier than scroll position so colour is there when you arrive.
-    var scroll = $window.scrollTop() + ($window.height() / 3);
+    var scroll = $window.scrollTop() + ($window.height() / 1);
    
     $panel.each(function () {
       var $this = $(this);
@@ -24,4 +23,3 @@ $(window).scroll(function() {
     });    
     
   }).scroll();
-  console.log("hii")
