@@ -1,11 +1,13 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*{
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--primary-col);
     color: var(--white-col);
-    font-family: 'Montserrat', sans-serif;}
+    font-family: 'Montserrat', sans-serif;
+}
 
 :root{
     --primary-col:#020822;
@@ -13,6 +15,10 @@
     --liteGray-col:#DAD9D7;
 }
 
+body{
+    background-color: var(--primary-col);
+    transition: background-color 1s ease;
+}
 
 /* header section */
 header{
@@ -62,13 +68,42 @@ header .portfolio-navbar{
 /* service section */
 .service-section{
     margin-top: -200px;
-    height: 600px;
+
 }
 
-.liiteGray{
-    background-color: #ffa;
+.color-gray{
+    background-color: #DAD9D7;
 }
 
 .panel{
-    min-height: 80vh;
+    min-height: 100vh;
 }
+
+.white{
+    background-color: aqua;
+}
+
+
+  
+  /* colours */
+  .color-violet {
+    background-color: #7A4EAB;
+  }
+  .color-indigo {
+    background-color: #4332CF;
+  }
+  .color-blue {
+    background-color: #2F8FED;
+  }
+  .color-green {
+    background-color: #4DCF42;
+  }
+  .color-yellow {
+    background-color: #FAEB33;
+  }
+  .color-orange {
+    background-color: #F19031;
+  }
+  .color-red {
+    background-color: #F2293A;
+  }
