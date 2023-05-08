@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .images {
+            position: relative;
+        }
+
+        .images img {
+            position: absolute;
+            height: 40vh;
+            opacity: 0;
+            z-index: -1;
+            transform: scale(0.8);
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .services-wrapper {
+            display: grid;
+            place-content: center;
+        }
+
+        .services-wrapper .categories {
+            font-size: 3.6vmax;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .services-wrapper .categories p {
+            cursor: pointer;
+            font-weight: 400;
+            color: #282229;
+            mix-blend-mode: color-burn;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="images">
+        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Factivewear-3.jpg?alt=media&token=45174749-6fc9-4a23-b671-4fba4ca2d0f6"
+            alt="activewear" data-image="activewear">
+        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Fbeach-wear.jpg?alt=media&token=e21ab7bb-0ca3-4780-9243-25c0484e89a8"
+            alt="beachwear" data-image="beachwear">
+        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Fdresses.jpg?alt=media&token=0cad3820-b2c9-43a0-8503-66eb81db7dab"
+            alt="dresses" data-image="dresses">
+        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Fheels.jpg?alt=media&token=e8a42ce6-3242-4f27-9c24-404b3c0eaf15"
+            alt="heels" data-image="heels">
+    </div>
+
+    <div class="services-wrapper">
+        <div class="categories">
+            <p data-label="activewear">Activewear</p>
+            <p data-label="beachwear">Beachwear</p>
+            <p data-label="dresses">Dresses</p>
+            <p data-label="heels">Heels</p>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+
+    <script>
+        const categoriesWrapper = document.querySelector('.services-wrapper')
+
+        categoriesWrapper.addEventListener('mousemove', e => {
+            gsap.to('img', {
+                // move images to mouse position
+                x: e.x,
+                y: e.y,
+                // transform origin of images to center
+                xPercent: -50,
+                yPercent: -50,
+                // stagger subsequent images by 50ms
+                stagger: .05
+            })
+        })
+
+        gsap.utils.toArray('.categories p')
+            .forEach(category => {
+                let {
+                    label
+                } = category.dataset
+
+                category.addEventListener('mouseenter', () => {
+                    gsap.to(`img[data-image=${label}]`, {
+                        opacity: 1,
+                        scale: 1
+                    })
+                    gsap.set(`img[data-image=${label}]`, {
+                        zIndex: 1
+                    })
+                    gsap.set(`p[data-label=${label}]`, {
+                        zIndex: 2
+                    })
+                })
+
+                category.addEventListener('mouseleave', () => {
+                    gsap.to(`img[data-image=${label}]`, {
+                        opacity: 0,
+                        zIndex: -1,
+                        scale: .80
+                    })
+                    gsap.set(`p[data-label=${label}]`, {
+                        zIndex: 0
+                    })
+                })
+            })
+    </script>
+</body>
+
+</html>

@@ -1,34 +1,45 @@
-let menuItem = document.querySelectorAll(".menu__item-text");
-let menuImage = document.querySelectorAll(".menu__item-image");
+const categoriesWrapper = document.querySelector('.services-wrapper')
 
-// adding eventListeners to all the menuItems.
-for (let i = 0; i < 6; i++) {
-  //   image reveal animation
-  const animation = gsap.to(menuImage[i], {
-    opacity: 1,
-    duration: 0.2,
-    scale: 1,
-    ease: "ease-in-out"
-  });
+        categoriesWrapper.addEventListener('mousemove', e => {
+            gsap.to('.service-img', {
+                // move images to mouse position
+                x: e.x,
+                y: e.y,
+                // transform origin of images to center
+                xPercent: -50,
+                yPercent: -50,
+                // stagger subsequent images by 50ms
+                stagger: .05
+            })
+        })
 
-  menuItem[i].addEventListener("mouseenter", () => animation.play());
-  menuItem[i].addEventListener("mouseleave", () => animation.reverse());
+        gsap.utils.toArray('.categories p')
+            .forEach(category => {
+                let {
+                    label
+                } = category.dataset
 
-  //   initialization
-  animation.reverse();
-}
+                category.addEventListener('mouseenter', () => {
+                    gsap.to(`.service-img[data-image=${label}]`, {
+                        opacity: 1,
+                        scale: 1
+                    })
+                    gsap.set(`.service-img[data-image=${label}]`, {
+                        zIndex: 1
+                    })
+                    gsap.set(`p[data-label=${label}]`, {
+                        zIndex: 2
+                    })
+                })
 
-//   to move image along with cursor
-function moveText(e) {
-  gsap.to([...menuImage], {
-    css: {
-      left: e.pageX + 50,
-      top: e.pageY,
-    },
-    duration: 0.3,
-  });
-}
-
-menuItem.forEach((el) => {
-  el.addEventListener("mousemove", moveText);
-});
+                category.addEventListener('mouseleave', () => {
+                    gsap.to(`.service-img[data-image=${label}]`, {
+                        opacity: 0,
+                        zIndex: -1,
+                        scale: .80
+                    })
+                    gsap.set(`p[data-label=${label}]`, {
+                        zIndex: 0
+                    })
+                })
+            })
