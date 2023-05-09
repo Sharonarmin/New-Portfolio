@@ -1,45 +1,75 @@
-const categoriesWrapper = document.querySelector('.services-wrapper')
+var cursor = document.querySelector('.cursor');
+var overlay = document.querySelectorAll('.service-overlay');
 
-        categoriesWrapper.addEventListener('mousemove', e => {
-            gsap.to('.service-img', {
-                // move images to mouse position
-                x: e.x,
-                y: e.y,
-                // transform origin of images to center
-                xPercent: -50,
-                yPercent: -50,
-                // stagger subsequent images by 50ms
-                stagger: .05
-            })
+function moveCircle(e) {
+    TweenLite.to(cursor, 0.5, {
+        css: {
+            left: e.pageX,
+            top: e.pageY
+        },
+        delay: 0.03
+    });
+}
+
+document.querySelector('.s-1').addEventListener("mouseover", function () {
+    document.querySelector('.cursor').style.backgroundImage =
+        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive1_fkkxso.jpg)"
+});
+document.querySelector('.s-2').addEventListener("mouseover", function () {
+    document.querySelector('.cursor').style.backgroundImage =
+        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive2_gcrxje.jpg)"
+});
+
+document.querySelector('.s-3').addEventListener("mouseover", function () {
+    document.querySelector('.cursor').style.backgroundImage =
+        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive3_mfhw4e.jpg)"
+});
+document.querySelector('.s-4').addEventListener("mouseover", function () {
+    document.querySelector('.cursor').style.backgroundImage =
+        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive4_ztkutp.jpg)"
+});
+
+var flag = false;
+overlay.forEach(item => {
+    item.addEventListener("mousemove", function () {
+        flag = true;
+        TweenLite.to(cursor, 0.3, {
+            scale: 1,
+            autoAlpha: 1
+        });
+        overlay.forEach(item => {
+            item.addEventListener("mousemove", moveCircle);
         })
+    })
+});
+overlay.forEach(item => {
+    item.addEventListener("touchmove", function () {
+        flag = true;
+        TweenLite.to(cursor, 0.3, {
+            scale: 1,
+            autoAlpha: 1
+        });
+        overlay.forEach(item => {
+            item.addEventListener("touchmove", moveCircle);
+        })
+    })
+});
 
-        gsap.utils.toArray('.categories p')
-            .forEach(category => {
-                let {
-                    label
-                } = category.dataset
-
-                category.addEventListener('mouseenter', () => {
-                    gsap.to(`.service-img[data-image=${label}]`, {
-                        opacity: 1,
-                        scale: 1
-                    })
-                    gsap.set(`.service-img[data-image=${label}]`, {
-                        zIndex: 1
-                    })
-                    gsap.set(`p[data-label=${label}]`, {
-                        zIndex: 2
-                    })
-                })
-
-                category.addEventListener('mouseleave', () => {
-                    gsap.to(`.service-img[data-image=${label}]`, {
-                        opacity: 0,
-                        zIndex: -1,
-                        scale: .80
-                    })
-                    gsap.set(`p[data-label=${label}]`, {
-                        zIndex: 0
-                    })
-                })
-            })
+overlay.forEach(item => {
+    item.addEventListener("mouseout", function () {
+        flag = false;
+        TweenLite.to(cursor, 0.3, {
+            scale: 0.1,
+            autoAlpha: 0
+        });
+    })
+});
+overlay.forEach(item => {
+    item.addEventListener("touchend", function () {
+        flag = false;
+        TweenLite.to(cursor, 0.3, {
+            scale: 0.1,
+            autoAlpha: 0
+        });
+    })
+});

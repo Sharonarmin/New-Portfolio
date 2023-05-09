@@ -6,115 +6,190 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        .images {
-            position: relative;
-        }
 
-        .images img {
+        .cursor {
             position: absolute;
-            height: 40vh;
-            opacity: 0;
-            z-index: -1;
-            transform: scale(0.8);
+            width: 600px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -100px;
+            background: no-repeat 50% 50%;
+            background-size: cover;
+            z-index: 1;
         }
 
-        body {
-            overflow: hidden;
+        .wrapper {
+            width: 80%;
+            margin: 10% auto;
         }
 
-        .services-wrapper {
-            display: grid;
-            place-content: center;
-        }
-
-        .services-wrapper .categories {
-            font-size: 3.6vmax;
+        .service {
+            border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-preferred-size: 1;
+            flex-basis: 1;
+            position: relative;
+            z-index: 2;
+            mix-blend-mode: difference;
         }
 
-        .services-wrapper .categories p {
-            cursor: pointer;
-            font-weight: 400;
-            color: #282229;
-            mix-blend-mode: color-burn;
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        @media (max-width: 900px) {
+            .cursor {
+                position: absolute;
+                width: 250px;
+                height: 200px;
+                top: 50%;
+                left: 50%;
+                margin: -100px 0 0 -100px;
+                background: no-repeat 50% 50%;
+                background-size: cover;
+                z-index: 1;
+            }
+
+            .service {
+                padding: 0px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="images">
-        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Factivewear-3.jpg?alt=media&token=45174749-6fc9-4a23-b671-4fba4ca2d0f6"
-            alt="activewear" data-image="activewear">
-        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Fbeach-wear.jpg?alt=media&token=e21ab7bb-0ca3-4780-9243-25c0484e89a8"
-            alt="beachwear" data-image="beachwear">
-        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Fdresses.jpg?alt=media&token=0cad3820-b2c9-43a0-8503-66eb81db7dab"
-            alt="dresses" data-image="dresses">
-        <img src="https://firebasestorage.googleapis.com/v0/b/hashnode-tutorials.appspot.com/o/image-hover-tutorial%2Fheels.jpg?alt=media&token=e8a42ce6-3242-4f27-9c24-404b3c0eaf15"
-            alt="heels" data-image="heels">
-    </div>
 
-    <div class="services-wrapper">
-        <div class="categories">
-            <p data-label="activewear">Activewear</p>
-            <p data-label="beachwear">Beachwear</p>
-            <p data-label="dresses">Dresses</p>
-            <p data-label="heels">Heels</p>
 
+    <div class="cursor"></div>
+    <div class="wrapper">
+        <div class="service-list">
+            <div class="service p-1">
+                <div class="service-title">
+                    <h1>Drive Scene1</h1>
+                </div>
+                <div class="service-categ">First Scene</div>
+                <div class="service-overlay"></div>
+            </div>
+            <div class="service p-2">
+                <div class="service-title">
+                    <h1>Drive Scene2</h1>
+                </div>
+                <div class="service-categ">Second Scene</div>
+                <div class="service-overlay"></div>
+            </div>
+            <div class="service p-3">
+                <div class="service-title">
+                    <h1>Drive Scene3</h1>
+                </div>
+                <div class="service-categ">Third Scene</div>
+                <div class="service-overlay"></div>
+            </div>
+            <div class="service p-4">
+                <div class="service-title">
+                    <h1>Drive Scene4</h1>
+                </div>
+                <div class="service-categ">Last Scene</div>
+                <div class="service-overlay"></div>
+            </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
     <script>
-        const categoriesWrapper = document.querySelector('.services-wrapper')
+        var cursor = document.querySelector('.cursor');
+        var overlay = document.querySelectorAll('.service-overlay');
 
-        categoriesWrapper.addEventListener('mousemove', e => {
-            gsap.to('img', {
-                // move images to mouse position
-                x: e.x,
-                y: e.y,
-                // transform origin of images to center
-                xPercent: -50,
-                yPercent: -50,
-                // stagger subsequent images by 50ms
-                stagger: .05
-            })
-        })
+        function moveCircle(e) {
+            TweenLite.to(cursor, 0.5, {
+                css: {
+                    left: e.pageX,
+                    top: e.pageY
+                },
+                delay: 0.03
+            });
+        }
 
-        gsap.utils.toArray('.categories p')
-            .forEach(category => {
-                let {
-                    label
-                } = category.dataset
+        document.querySelector('.p-1').addEventListener("mouseover", function () {
+            document.querySelector('.cursor').style.backgroundImage =
+                "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive1_fkkxso.jpg)"
+        });
+        document.querySelector('.p-2').addEventListener("mouseover", function () {
+            document.querySelector('.cursor').style.backgroundImage =
+                "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive2_gcrxje.jpg)"
+        });
 
-                category.addEventListener('mouseenter', () => {
-                    gsap.to(`img[data-image=${label}]`, {
-                        opacity: 1,
-                        scale: 1
-                    })
-                    gsap.set(`img[data-image=${label}]`, {
-                        zIndex: 1
-                    })
-                    gsap.set(`p[data-label=${label}]`, {
-                        zIndex: 2
-                    })
-                })
+        document.querySelector('.p-3').addEventListener("mouseover", function () {
+            document.querySelector('.cursor').style.backgroundImage =
+                "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive3_mfhw4e.jpg)"
+        });
+        document.querySelector('.p-4').addEventListener("mouseover", function () {
+            document.querySelector('.cursor').style.backgroundImage =
+                "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive4_ztkutp.jpg)"
+        });
 
-                category.addEventListener('mouseleave', () => {
-                    gsap.to(`img[data-image=${label}]`, {
-                        opacity: 0,
-                        zIndex: -1,
-                        scale: .80
-                    })
-                    gsap.set(`p[data-label=${label}]`, {
-                        zIndex: 0
-                    })
+        var flag = false;
+        overlay.forEach(item => {
+            item.addEventListener("mousemove", function () {
+                flag = true;
+                TweenLite.to(cursor, 0.3, {
+                    scale: 1,
+                    autoAlpha: 1
+                });
+                overlay.forEach(item => {
+                    item.addEventListener("mousemove", moveCircle);
                 })
             })
+        });
+        overlay.forEach(item => {
+            item.addEventListener("touchmove", function () {
+                flag = true;
+                TweenLite.to(cursor, 0.3, {
+                    scale: 1,
+                    autoAlpha: 1
+                });
+                overlay.forEach(item => {
+                    item.addEventListener("touchmove", moveCircle);
+                })
+            })
+        });
+
+        overlay.forEach(item => {
+            item.addEventListener("mouseout", function () {
+                flag = false;
+                TweenLite.to(cursor, 0.3, {
+                    scale: 0.1,
+                    autoAlpha: 0
+                });
+            })
+        });
+        overlay.forEach(item => {
+            item.addEventListener("touchend", function () {
+                flag = false;
+                TweenLite.to(cursor, 0.3, {
+                    scale: 0.1,
+                    autoAlpha: 0
+                });
+            })
+        });
     </script>
 </body>
 
