@@ -220,14 +220,11 @@ header .portfolio-navbar{
   color: #000;
   padding: 12px 30px;
   text-decoration: none;
-  margin-left: 20px;
-  font-weight: 600;
   font-size: 16px;
   line-height: 22px;
 }
 
 /* skills section */
-
 @-webkit-keyframes scroll {
   0% {
       transform: translateX(0);
@@ -247,6 +244,39 @@ header .portfolio-navbar{
       transform: translateX(calc(-250px * 10));
   }
 }
+
+
+
+.slider {
+  background: #2F354E;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+.slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 30);
+}
+
+.slider .slide {
+  height: 60px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.my-skills-section h4{
+  font-size: 18px;
+}
+
 
 @-webkit-keyframes backward-move {
   0% {
@@ -268,55 +298,71 @@ header .portfolio-navbar{
   }
 }
 
-.slider {
-  background: #2F354E;
+.slider-one {
+  background: #101C51;
   margin: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
+  padding: 10px 0;
 }
 
-.slider::before,
-.slider::after {
-  content: "";
-  height: 100px;
-  position: absolute;
-  width: 200px;
-  z-index: 2;
-}
-
-.slider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
-}
-
-.slider::before {
-  left: 0;
-  top: 0;
-}
-
-.slider .slide-track {
-  -webkit-animation: scroll 30s linear infinite;
-  animation: scroll 30s linear infinite;
+.slider-one .slidertrack-one {
+  -webkit-animation: backward-move 40s linear infinite;
+  animation: backward-move 40s linear infinite;
   display: flex;
-  width: calc(250px * 16);
-}
-.slider .slide-track-1 {
-  -webkit-animation: backward-move 30s linear infinite;
-  animation: backward-move 30s linear infinite;
-  display: flex;
-  width: calc(250px * 16);
+  width: calc(250px * 30);
 }
 
-.slider .slide {
-  height: 100px;
+.slider-one .slide {
+  height: 60px;
   margin: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.my-skills-section h4{
-  font-size: 18px;
+/* contact-section */
+
+.contact-section{
+  padding: 100px 10px;
+}
+
+.input-box{
+  margin-bottom: 40px;
+}
+.input-box input{
+  width: 100%;
+  border-style: none;
+  border-bottom: 1px  solid var(--liteGray-col);
+  background-color: transparent;
+}
+.input-box input::placeholder{
+  color: #fff;
+  font-size: 14px;
+}
+.contact-mail{
+  text-decoration: none;
+}
+
+.contact-mail i{
+  margin-right: 15px;
+}
+
+/* footer section */
+footer{
+  padding: 100px 10px 40px;
+}
+
+.footer-links{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+
+.footer-links i{
+  font-size: 24px;
+  color: #fff;
+  margin-left: 40px;
 }
