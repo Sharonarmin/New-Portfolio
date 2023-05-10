@@ -187,7 +187,7 @@ header .portfolio-navbar{
 }
 
 .works-image-box{
-  height: 460px;
+  height: 420px;
   width: 100%;
   position: relative;
   margin-top: 25px;
@@ -204,4 +204,119 @@ header .portfolio-navbar{
   position: relative;
   height: 100%;
   overflow: hidden;
+}
+
+.btn-1{
+  background-color: #2F354E;
+  color: var(--liteGray-col);
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.btn-2{
+  background: #FFFFFF;
+  color: #000;
+  padding: 12px 30px;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* skills section */
+
+@-webkit-keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(calc(-250px * 10));
+  }
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(calc(-250px * 10));
+  }
+}
+
+@-webkit-keyframes backward-move {
+  0% {
+      transform: translateX(calc(-250px * 10));
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@keyframes backward-move {
+  0% {
+      transform: translateX(calc(-250px * 10));
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.slider {
+  background: #2F354E;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  -webkit-animation: scroll 30s linear infinite;
+  animation: scroll 30s linear infinite;
+  display: flex;
+  width: calc(250px * 16);
+}
+.slider .slide-track-1 {
+  -webkit-animation: backward-move 30s linear infinite;
+  animation: backward-move 30s linear infinite;
+  display: flex;
+  width: calc(250px * 16);
+}
+
+.slider .slide {
+  height: 100px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-skills-section h4{
+  font-size: 18px;
 }
