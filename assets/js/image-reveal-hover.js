@@ -13,20 +13,20 @@ function moveCircle(e) {
 
 document.querySelector('.s-1').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive1_fkkxso.jpg)"
+        "url('/assets/images/ui-ux-design.jpg')"
 });
 document.querySelector('.s-2').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive2_gcrxje.jpg)"
+        "url('/assets/images/web-design.jpg')"
 });
 
 document.querySelector('.s-3').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive3_mfhw4e.jpg)"
+        "url('/assets/images/e-commerce.jpg')"
 });
 document.querySelector('.s-4').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url(https://res.cloudinary.com/du25cd0bj/image/upload/v1579694456/driveImages/drive4_ztkutp.jpg)"
+        "url('/assets/images/wordpress.jpg')"
 });
 
 var flag = false;

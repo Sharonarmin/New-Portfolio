@@ -74,6 +74,10 @@ header .portfolio-navbar{
 
 /* service section */
 
+.service-section{
+  padding: 100px 10px 10px;
+}
+
 .section-heads{
   font-weight: 600;
   font-size: 44px;
@@ -114,6 +118,7 @@ header .portfolio-navbar{
   margin: -100px 0 0 -100px;
   background: no-repeat 50% 50%;
   background-size: cover;
+  background-position: center;
   z-index: 1;
 }
 
@@ -331,7 +336,9 @@ header .portfolio-navbar{
   border-style: none;
   border-bottom: 1px  solid var(--liteGray-col);
   background-color: transparent;
+  outline: none;
 }
+
 .input-box input::placeholder{
   color: #fff;
   font-size: 14px;
