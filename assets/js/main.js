@@ -1,3 +1,7 @@
+// aos
+
+AOS.init();
+
 gsap.registerPlugin(ScrollTrigger);
 
 let revealContainers = document.querySelectorAll(".reveal");
@@ -23,3 +27,4 @@ revealContainers.forEach((container) => {
     ease: Power2.out
   });
 });
+

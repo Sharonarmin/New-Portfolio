@@ -370,6 +370,7 @@ header .portfolio-navbar{
 
 .contact-section{
   padding: 100px 10px;
+  overflow-x: hidden;
 }
 
 .input-box{
@@ -400,7 +401,7 @@ header .portfolio-navbar{
 
 /* footer section */
 footer{
-  padding: 100px 10px 40px;
+  padding: 100px 10px 60px;
 }
 
 .footer-links{
