@@ -1,5 +1,7 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -17,9 +19,12 @@ body{
     background-color: var(--primary-col);
     transition: background-color 1s ease;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
+  }
+a{
+  text-decoration: none;
 }
-
 /* bg color */
 .color-gray{
   background-color: #DAD9D7;
@@ -35,6 +40,7 @@ body{
 .logo{
     font-size: 50px;
     font-weight: 600;
+
 }
 header .portfolio-navbar{
     display: flex;
@@ -62,6 +68,7 @@ header .portfolio-navbar{
     font-size: 70px;
     font-weight: 600;
     letter-spacing: 7px;
+    font-family: 'Poppins', sans-serif;
 }
 .hi-img{
     width: 130px;
@@ -70,6 +77,12 @@ header .portfolio-navbar{
 .hero-buttons{
   margin-top: 40px;
 }
+.hero-buttons i{
+  color: var(--primary-col);
+  font-size: 18px;
+  margin-left: 10px;
+}
+
 
 /* hero-image-section */
 
@@ -109,6 +122,8 @@ header .portfolio-navbar{
   mix-blend-mode: difference;
   font-size: 16px;
   line-height: 26px;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .cursor {
@@ -158,7 +173,7 @@ header .portfolio-navbar{
   height: 100%;
 }
 .service-title h4{
-  font-weight: 500;
+  font-weight: 400;
   font-size: 30px;
   line-height: 40px;
 }
@@ -212,6 +227,13 @@ header .portfolio-navbar{
   padding: 12px 30px;
   font-size: 16px;
   line-height: 22px;
+  border: 1px solid #2F354E;
+  color: #fff;
+}
+
+.btn-1:hover{
+  background-color: var(--primary-col);
+  border: 1px solid #fff;
 }
 
 .btn-2{
@@ -221,6 +243,15 @@ header .portfolio-navbar{
   text-decoration: none;
   font-size: 16px;
   line-height: 22px;
+}
+
+.btn-2:hover{
+  background-color: var(--primary-col);
+  border: 1px solid #fff;
+  color: #fff;
+}
+.btn-2:hover i{
+  color: #fff;
 }
 
 /* skills section */
@@ -368,6 +399,18 @@ footer{
   margin-left: 40px;
 }
 
+/* works page */
+.inner-page-head{
+  display: flex;
+  justify-content: center;
+  padding: 100px 10px;
+}
+
+.inner-page-head h3{
+  font-size: 44px;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 
 /* media screen */
@@ -450,7 +493,7 @@ footer{
     margin-top: 10px;
     padding: 10px;
   }
-  .logo{
+  .logo a{
     font-size: 32px;
   }
   .footer-links i{
