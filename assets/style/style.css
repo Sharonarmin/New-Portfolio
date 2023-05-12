@@ -51,6 +51,7 @@ header .portfolio-navbar{
 }
 .hamburger-btn{
     width: 70px;
+    cursor: pointer;
 }
 
 
@@ -430,6 +431,44 @@ footer{
 }
 
 
+/* offcanvas */
+
+.offcanvas-body{
+  background-color: var(--primary-col);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.offcanvas-body h4{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.offcanvas-body .location{
+  text-align: center;
+}
+
+.offcanvas-body .social-media{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.offcanvas-header{
+  background-color: var(--primary-col);
+  display: flex;
+  justify-content: end;
+  padding-top: 20px;
+}
+.offcanvas-close-btn i{
+  font-size: 24px;
+  color: #fff;
+}
+
+.offcanvas-close-btn{
+  border-style: none;
+  background: transparent;
+}
 
 /* media screen */
 
