@@ -544,16 +544,16 @@
         <div class="col-md-6 col-12">
           <div class="contact-form">
             <div class="input-box">
-              <input type="text" placeholder="YOUR NAME">
+              <input type="text" id="name" placeholder="YOUR NAME">
             </div>
             <div class="input-box">
-              <input type="text" placeholder="YOUR EMAIL">
+              <input type="text" id="email" placeholder="YOUR EMAIL">
             </div>
             <div class="input-box">
-              <input type="text" placeholder="TELL US ABOUT YOUR PROJECT">
+              <input type="text" id="message" placeholder="TELL US ABOUT YOUR PROJECT">
             </div>
             <div class="mt-md-5 mt-0">
-              <a href="#" class="btn-2 me-0">CONTACT ME</a>
+              <a href="#" class="btn-2 me-0" onclick="sendMail()">CONTACT ME</a>
             </div>
           </div>
         </div>
@@ -605,11 +605,20 @@
   <script src="assets/js/SmoothScrollMouseWheel.js"></script>
   <!-- main js -->
   <script src="assets/js/main.js"></script>
-
   <script>
       // aos
       AOS.init();
   </script>
+
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+  (function(){
+  emailjs.init("giPAWF4uujJlTFpY1");
+  })();
+  </script>
+  <script src="assets/js/mail.js"></script>
 </body>
 
 </html>
