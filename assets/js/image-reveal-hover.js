@@ -13,20 +13,20 @@ function moveCircle(e) {
 
 document.querySelector('.s-1').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url('/assets/images/ui-ux-design.jpg')"
+        "url('/assets/images/ui-ux-design.webp')"
 });
 document.querySelector('.s-2').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url('/assets/images/web-design.jpg')"
+        "url('/assets/images/web-design.webp')"
 });
 
 document.querySelector('.s-3').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url('/assets/images/e-commerce.jpg')"
+        "url('/assets/images/e-commerce.webp')"
 });
 document.querySelector('.s-4').addEventListener("mouseover", function () {
     document.querySelector('.cursor').style.backgroundImage =
-        "url('/assets/images/wordpress.jpg')"
+        "url('/assets/images/wordpress.webp')"
 });
 
 var flag = false;
