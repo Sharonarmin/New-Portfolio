@@ -67,6 +67,10 @@ header .portfolio-navbar{
     width: 130px;
 }
 
+.hero-buttons{
+  margin-top: 40px;
+}
+
 /* hero-image-section */
 
 /* service section */
@@ -365,6 +369,7 @@ footer{
 }
 
 
+
 /* media screen */
 
 /* tab */
@@ -404,9 +409,15 @@ footer{
     background-size: cover;
     z-index: 1;
   }
+  .service-section{
+    padding: 50px 10px;
+  }
   .service-title h4{
     font-size: 22px;
     line-height: 30px;
+  }
+  .my-projects-section{
+    padding: 20px 10px 50px;
   }
   .works-image-box{
     height: 280px;
@@ -444,4 +455,18 @@ footer{
   .logo{
     font-size: 32px;
   }
+  .footer-links i{
+    font-size: 24px;
+    color: #fff;
+    margin-left: 20px;
+  }
+  .ftr-btm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact-section{
+    padding: 50px 10px;
+  }
+  
 }
