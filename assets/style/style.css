@@ -437,4 +437,11 @@ footer{
   .btn-2{
     width: 220px;
   }
+  header .portfolio-navbar{
+    margin-top: 0px;
+    padding: 10px;
+  }
+  .logo{
+    font-size: 32px;
+  }
 }
