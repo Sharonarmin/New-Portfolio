@@ -390,6 +390,8 @@ footer{
   }
   .hero-head-1{
     font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
   }
   .cursor {
     position: absolute;
@@ -417,5 +419,22 @@ footer{
   }
   footer {
     padding: 20px 10px;
+  }
+  .section-heads{
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .hero-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-1{
+    width: 220px;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .btn-2{
+    width: 220px;
   }
 }
