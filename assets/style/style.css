@@ -377,6 +377,9 @@ header .portfolio-navbar{
 }
 .contact-mail{
   text-decoration: none;
+  display: block;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .contact-mail i{
