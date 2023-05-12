@@ -57,11 +57,8 @@ header .portfolio-navbar{
     padding: 100px 10px;
 }
 
+
 .hero-head-1{
-    display: flex;
-    align-items: center;
-}
-.hero-head-1 h3{
     font-size: 70px;
     font-weight: 600;
     letter-spacing: 7px;
@@ -76,6 +73,7 @@ header .portfolio-navbar{
 
 .service-section{
   padding: 100px 10px 10px;
+  overflow: hidden;
 }
 
 .section-heads{
@@ -125,7 +123,7 @@ header .portfolio-navbar{
 
 
 .service {
-  padding: 35px 0;
+  padding: 45px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
