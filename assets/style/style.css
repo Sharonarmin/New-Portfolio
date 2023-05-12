@@ -160,7 +160,7 @@ header .portfolio-navbar{
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 999px) {
   .cursor {
       position: absolute;
       width: 250px;
@@ -173,9 +173,6 @@ header .portfolio-navbar{
       z-index: 1;
   }
 
-  .service {
-      padding: 0px;
-  }
 }
 
 /* my projects section */
@@ -365,4 +362,60 @@ footer{
   font-size: 24px;
   color: #fff;
   margin-left: 40px;
+}
+
+
+/* media screen */
+
+/* tab */
+@media only screen and (max-width:999px){
+  .hero-head-1{
+    font-size: 46px;
+  }
+  .footer{
+    padding: 60px 10px 10px;
+  }
+  .service {
+    padding: 30px 10px;
+}
+}
+
+/* mobile */
+@media only screen and (max-width:767px){
+  .hero-section{
+    padding: 50px 10px;
+  }
+  .hi-img {
+    width: 60px;
+  }
+  .hero-head-1{
+    font-size: 28px;
+  }
+  .cursor {
+    position: absolute;
+    width: 150px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+    z-index: 1;
+  }
+  .service-title h4{
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .works-image-box{
+    height: 280px;
+  }
+  contact-section{
+    padding: 50px 10px;
+  }
+  .contact-form{
+    margin-top: 40px;
+  }
+  footer {
+    padding: 20px 10px;
+  }
 }
