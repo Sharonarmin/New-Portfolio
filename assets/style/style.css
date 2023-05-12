@@ -410,23 +410,21 @@ footer{
     z-index: 1;
   }
   .service-section{
-    padding: 20px 10px 30px;
+    padding: 50px 10px 30px;
   }
   .service-title h4{
     font-size: 22px;
     line-height: 30px;
   }
   .my-projects-section{
-    padding: 0px 10px 20px;
+    padding: 30px 10px 60px;
   }
   .works-image-box{
     height: 280px;
   }
-  contact-section{
-    padding: 50px 10px;
-  }
+
   .contact-form{
-    margin-top: 40px;
+    margin-top: 50px;
   }
   footer {
     padding: 20px 10px;
@@ -466,7 +464,7 @@ footer{
     align-items: center;
   }
   .contact-section{
-    padding: 50px 10px 20px;
+    padding: 60px 10px 30px;
   }
   
 }
