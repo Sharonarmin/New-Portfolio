@@ -1,7 +1,3 @@
-// aos
-
-AOS.init();
-
 gsap.registerPlugin(ScrollTrigger);
 
 let revealContainers = document.querySelectorAll(".reveal");
