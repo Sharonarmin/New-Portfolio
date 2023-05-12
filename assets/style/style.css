@@ -229,6 +229,7 @@ header .portfolio-navbar{
   line-height: 22px;
   border: 1px solid #2F354E;
   color: #fff;
+  text-align: center;
 }
 
 .btn-1:hover{
@@ -243,6 +244,7 @@ header .portfolio-navbar{
   text-decoration: none;
   font-size: 16px;
   line-height: 22px;
+  text-align: center;
 }
 
 .btn-2:hover{
