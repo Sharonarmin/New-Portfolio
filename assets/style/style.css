@@ -548,9 +548,11 @@ footer{
     width: 220px;
     display: block;
     margin-bottom: 15px;
+    z-index:999;
   }
   .btn-2{
     width: 220px;
+    z-index:999;
   }
   header .portfolio-navbar{
     margin-top: 10px;
